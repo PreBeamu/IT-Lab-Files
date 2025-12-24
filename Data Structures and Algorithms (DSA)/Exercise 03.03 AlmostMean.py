@@ -88,21 +88,32 @@ class SinglyLinkedList:
             lastN = lastN.next
         beforeNode.next = afterNode
 
+    def getIndex(self, index):
+        currIndex, lastN = 1, self.head
+        if self.count < index or index <= 0:
+            return "Error"
+        while lastN:
+            if currIndex >= index:
+                return lastN.data
+            lastN = lastN.next
+            currIndex += 1
+
 def main():
-    mylist = SinglyLinkedList()
+    id_list, score_list = SinglyLinkedList(), SinglyLinkedList()
+    sum = 0
+
     for _ in range(int(input())):
-        text = input()
-        condition, data = text.split(": ")
-        if condition == "F":
-            mylist.insert_front(data)
-        elif condition == "L":
-            mylist.insert_last(data)
-        elif condition == "B":
-            mylist.insert_before(*data.split(", "))
-        elif condition == "D":
-            mylist.delete(data)
-        else:
-            print("Invalid Condition!")
-    mylist.traverse()
+        id,sc = input().split("\t")
+        id_list.insert_last(id)
+        score_list.insert_last(sc)
+        sum += float(sc)
+
+    avg, curr_max, indux = sum/score_list.count, 0, 0
+    for i in range(score_list.count):
+        score = float(score_list.getIndex(i+1))
+        if score <= avg and score > curr_max:
+            curr_max = score
+            indux = i+1
+    print(id_list.getIndex(indux)+"\t"+str(curr_max))
 
 main()

@@ -50,7 +50,6 @@ class SinglyLinkedList:
             print("Cannot insert,",node,"does not exist.")
             return
         ##
-        self.count += 1
         if self.head.data == node:
             self.insert_front(data)
             return
@@ -63,6 +62,7 @@ class SinglyLinkedList:
             lastN = lastN.next
         lastN.next = beforeNode
         beforeNode.next = afterNode
+        self.count += 1
 
     def delete(self, data):
         founded, lastN = "", self.head
@@ -100,7 +100,6 @@ class SinglyLinkedList:
 
 def main():
     mylist = SinglyLinkedList()
-    text = input()
     while True:
         text = input()
         if text == "Last":

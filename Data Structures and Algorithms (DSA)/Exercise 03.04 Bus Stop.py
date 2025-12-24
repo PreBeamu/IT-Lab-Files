@@ -18,6 +18,15 @@ class SinglyLinkedList:
             lastN = lastN.next
         print(result.rstrip(" -> "))
 
+    def get_nodes(self):
+        if not self.head:
+            return ""
+        result, lastN = "", self.head
+        while lastN:
+            result += (lastN.data+",")
+            lastN = lastN.next
+        return result.rstrip(",")
+
     def insert_last(self, data):
         node = DataNode(data)
         self.count += 1
@@ -88,21 +97,62 @@ class SinglyLinkedList:
             lastN = lastN.next
         beforeNode.next = afterNode
 
-def main():
-    mylist = SinglyLinkedList()
-    for _ in range(int(input())):
-        text = input()
-        condition, data = text.split(": ")
-        if condition == "F":
-            mylist.insert_front(data)
-        elif condition == "L":
-            mylist.insert_last(data)
-        elif condition == "B":
-            mylist.insert_before(*data.split(", "))
-        elif condition == "D":
-            mylist.delete(data)
+    def getIndex(self, index, returnNode=False):
+        currIndex, lastN = 1, self.head
+        if self.count < index or index <= 0:
+            return "Error"
+        while lastN:
+            if currIndex >= index:
+                return lastN.data if not returnNode else lastN
+            lastN = lastN.next
+            currIndex += 1
+
+    def insert_Index(self, index, data):
+        self.count += 1
+        if index == 1:
+            newNode = DataNode(data)
+            afterNode = self.head
+            self.head = newNode
+            newNode.next = afterNode
+        elif index < self.count:
+            newNode = DataNode(data)
+            beforeNode = self.getIndex(index-1,True)
+            afterNode = self.getIndex(index,True)
+            beforeNode.next = newNode
+            newNode.next = afterNode
         else:
-            print("Invalid Condition!")
-    mylist.traverse()
+            self.insert_last(data)
+
+def main():
+    bus = SinglyLinkedList()
+    max_passen, sign = int(input()), int(input())
+    done = 0
+    for num in range(1,sign+1):
+        # print("----------- REACHED SIGN",num,"-----------")
+        line = input().strip()
+        i = 0
+
+        while i < len(line) and line[i] != ' ':
+            i += 1
+        while i < len(line) and line[i] == ' ':
+            i += 1
+
+        data = line[i:]
+        if not data: continue
+    
+        current_passen = bus.get_nodes().split(",")
+        for des in current_passen:
+            if des and int(des) == num:
+                bus.delete(des)
+                done += 1
+                # print("EJECTED",des)
+
+        for des in data.split(" "):
+            if not des.isdigit(): continue
+            if bus.count < max_passen and int(des) > num:
+                bus.insert_last(des)
+                # print("PICKED UP",des)
+
+    print(done)
 
 main()

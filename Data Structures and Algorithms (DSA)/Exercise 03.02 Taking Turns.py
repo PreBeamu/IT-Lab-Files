@@ -88,21 +88,30 @@ class SinglyLinkedList:
             lastN = lastN.next
         beforeNode.next = afterNode
 
-def main():
-    mylist = SinglyLinkedList()
-    for _ in range(int(input())):
-        text = input()
-        condition, data = text.split(": ")
-        if condition == "F":
-            mylist.insert_front(data)
-        elif condition == "L":
-            mylist.insert_last(data)
-        elif condition == "B":
-            mylist.insert_before(*data.split(", "))
-        elif condition == "D":
-            mylist.delete(data)
-        else:
-            print("Invalid Condition!")
-    mylist.traverse()
+    def getIndex(self, index):
+        currIndex, lastN = 1, self.head
+        if self.count < index or index <= 0:
+            return "Error"
+        while lastN:
+            if currIndex >= index:
+                return lastN.data
+            lastN = lastN.next
+            currIndex += 1
 
+def main():
+    temp_list, my_list = SinglyLinkedList(), SinglyLinkedList()
+    start = end = 0
+    for _ in range(int(input())):
+        temp_list.insert_last(input())
+
+    for i in range(temp_list.count):
+        is_start = (i % 4 == 1) or (i % 4 == 2)
+        if is_start:
+            start += 1
+            my_list.insert_last(temp_list.getIndex(start))
+        else:
+            my_list.insert_last(temp_list.getIndex(temp_list.count-end))
+            end += 1
+
+    my_list.traverse()
 main()

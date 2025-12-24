@@ -14,9 +14,9 @@ class SinglyLinkedList:
             return
         result, lastN = "", self.head
         while lastN:
-            result += (lastN.data+" -> ")
+            result += (lastN.data+" ")
             lastN = lastN.next
-        print(result.rstrip(" -> "))
+        print(result.rstrip(" "))
 
     def insert_last(self, data):
         node = DataNode(data)
@@ -88,21 +88,37 @@ class SinglyLinkedList:
             lastN = lastN.next
         beforeNode.next = afterNode
 
-def main():
-    mylist = SinglyLinkedList()
-    for _ in range(int(input())):
-        text = input()
-        condition, data = text.split(": ")
-        if condition == "F":
-            mylist.insert_front(data)
-        elif condition == "L":
-            mylist.insert_last(data)
-        elif condition == "B":
-            mylist.insert_before(*data.split(", "))
-        elif condition == "D":
-            mylist.delete(data)
+    def getIndex(self, index, returnNode=False):
+        currIndex, lastN = 1, self.head
+        if self.count < index or index <= 0:
+            return "Error"
+        while lastN:
+            if currIndex >= index:
+                return lastN.data if not returnNode else lastN
+            lastN = lastN.next
+            currIndex += 1
+
+    def insert_Index(self, index, data):
+        self.count += 1
+        if index == 1:
+            newNode = DataNode(data)
+            afterNode = self.head
+            self.head = newNode
+            newNode.next = afterNode
+        elif index < self.count:
+            newNode = DataNode(data)
+            beforeNode = self.getIndex(index-1,True)
+            afterNode = self.getIndex(index,True)
+            beforeNode.next = newNode
+            newNode.next = afterNode
         else:
-            print("Invalid Condition!")
-    mylist.traverse()
+            self.insert_last(data)
+
+def main():
+    my_list = SinglyLinkedList()
+    for _ in range(int(input())):
+        my_list.insert_last(input())
+    my_list.insert_Index(int(input())+1,input())
+    my_list.traverse()
 
 main()
