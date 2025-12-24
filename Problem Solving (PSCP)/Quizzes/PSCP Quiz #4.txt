@@ -1,0 +1,79 @@
+ถ้าแทน statementA ในโปรแกรมข้างบนด้วย statement ต่อไปนี้ จะได้ผลลัพธ์แต่ละข้อเป็นอะไร
+-> 4 ,Error ,Error ,7
+
+Login (Condition Checking)
+->  username_input = input()
+    password_input = input()
+    username = "admin"
+    password = "1234"
+    user_correct = username_input == username
+    pass_corret = password_input == password
+
+    if user_correct and not pass_corret:
+        print("wrong password")
+    elif not user_correct and pass_corret:
+        print("wrong username")
+    elif not user_correct and not pass_corret:
+        print("wrong username and password")
+    elif user_correct and pass_corret:
+        print("login succeeded")
+
+จงเขียนโปรแกรมดังต่อไปนี้เมื่อรับ input เป็นตัวแปร fruit
+->  fruit = input()
+    if fruit == "apple":
+        print("apple apple apple")
+    elif fruit == "grape":
+        print("GRAPES")
+    elif fruit == "mango":
+        print("mangozzz")
+    else:
+        print("the following fruit is not valid")
+
+จงเขียนโปรแกรม เพื่อตรวจระดับคะแนนของร้านอาหารแห่งหนึ่ง โดยกำหนดให้
+->  rating = int(input())
+    if 0 <= rating <= 4:
+        print("Bad")
+    elif 4 < rating <= 7:
+        print("Okay")
+    elif 7 < rating <= 10:
+        print("Good")
+    else:
+        print("Wrong rating")
+
+การเขียนโปรแกรมในรูปแบบด้านล่างเรียกว่า ___ conditional
+-> nested conditional
+
+ข้อใดต่อไปนี้เป็น keyword ในภาษา Python 3
+-> class assert with is try from pass
+
+ผู้ใช้งาน function f สามารถเรียกใช้งาน function f ได้โดยการส่งค่าตัวเลข 2 จำนวน ไปให้ a และ b ซึ่งเป็น ตัวแปรรับค่าผ่านเข้ามาของ function f หรืออาจจะส่งเพียงตัวเลขเดียว ให้ไป b ก็ได้ (โดย a จะถูกกำหนดให้มีค่าเป็น 0) function นี้ ต้องการหาผลรวมระหว่าง a และ b และส่งค่ากลับมา
+-> def f(b,a=0):
+
+กระบวนการในการทำ statement ที่เกี่ยวข้องกันเพื่อทำงานอย่างใดอย่างนึง มานิยามให้เป็นฟังก์ชั่น เพื่อจะได้เรียก statement เหล่านั้น โดยการเรียกผ่านฟังก์ชั่นแทน เรียกว่ากระบวนการนี้ว่า
+-> encapsulation
+
+จากโค้ดด้านล่าง มีการใช้เงื่อนไขแบบใดบ้าง
+-> chained comparision
+
+Compound statement จะต้องมีอย่างน้อย 1 statement ใน body ในกรณีที่เรายังไม่ได้ต้องการเขียน statement ใดๆลง body ในเวลานี้ แต่อาจจะเขียนเพิ่มในภายหลัง จะต้องใช้ใส่ statement ______ ไปใน body แทนไปก่อน
+-> pass
+
+จากโค้ดด้านล่าง หากเราต้องการให้ผู้ที่มีอายุมากกว่า 18 และมีน้ำหนักไม่เกิน 45 สามารถเข้าร่วมงานปาร์ตี้ได้ เราจำเป็นต้องใส่คีย์เวิร์ดอะไรบ้าง ?
+จงเลือกคีย์เวิร์ดมาใส่ในเครื่องหมาย _ ในโค้ดด้านล่างตามลำดับ
+-> >, and, <=
+
+การแก้ไข function โดยทำให้ function นั้นทำงานได้หลากหลายมากขึ้น โดยแทนที่ค่าคงที่ต่างๆด้วยตัวแปรหรือ parameter เรียกว่า ???
+-> generalization
+
+การเขียนโปรแกรมในรูปแบบด้านล่างเรียกว่าอะไร
+การเขียนโปรแกรมในรูปแบบด้านล่างเรียกว่าอะไร ___ conditional
+-> chained
+
+จงเลือก statement ต่อไปนี้ที่บอกว่าจำนวนอยู่ระหว่าง 10 และ 20 (อาจมีคำตอบที่ถูกมากกว่าหนึ่งคำตอบ เลือกคำตอบที่ถูกต้องทั้งหมด)
+-> 1 2 3 4
+
+จงเติมผลของการ run ตามลำดับ
+-> -2 ,True ,1 ,-1
+
+กระบวนการในปรับปรุงโปรแกรมที่ทำงานได้ถูกต้องอยู่แล้ว เพื่อเพิ่มคุณภาพของโปรแกรมให้ดีขึ้น เรียกว่า
+-> refactoring

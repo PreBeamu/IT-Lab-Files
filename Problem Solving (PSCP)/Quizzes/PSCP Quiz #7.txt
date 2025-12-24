@@ -1,0 +1,41 @@
+จาก pseudocode ด้านล่างจะมีคำว่า "Even" แสดงผลออกมาทั้งหมดกี่ครั้ง
+-> 3
+
+จาก Psuedocode ด้านบน หากทำการป้อนค่า [1, 5, 4, 2, 3, 7, 6, 8] และ 8 เข้าไปยัง myFunction จะมีการคืนค่าเป็นอย่างไร
+-> 7
+
+จากคำสั่งด้านบน (ภาษา Python) ควรเลือกใช้ Flowchart Symbol ในข้อใด : x = 3*5
+-> รูปที่ 1
+
+จาก Flowchart ที่กำหนดให้ หากป้อนค่า input เป็น 7 และ 26 ตามลำดับ จะได้ผลลัพธ์เป็นข้อใด
+-> True,False
+
+จาก Psuedocode ด้านบน หากทำการป้อนค่า [1, 5, 4, 2, 3, 7, 6, 8] เข้าไปยัง myFunction จะมีการคืนค่าเป็นอย่างไร
+-> [8, 7, 6, 5, 4, 3, 2, 1]
+
+จาก Flowchart ที่กำหนดให้ หากป้อนค่า input เป็น 5 จะได้ผลลัพธ์เป็นข้อใด
+-> 6
+
+จากคำสั่งด้านบน (ภาษา Python) ควรเลือกใช้ Flowchart Symbol ในข้อใด : string = input()
+-> รูปที่ 2
+
+จาก Psuedocode ด้านบน หากทำการป้อนค่า 14 เข้าไปยัง myFunction จะมีการคืนค่าเป็นอย่างไร
+-> 1110
+
+จงเขียนโค้ดตาม FlowChart ต่อไปนี้ [WRONG]
+->  counter = 1
+    num = int(input())
+
+    while counter <= num:
+        if counter  % 15 == 0:
+            print("FizzBuzz")
+        elif counter  % 5 == 0:
+            print("Buzz")
+        elif counter  % 3 == 0:
+            print("Fizz")
+        else:
+            print(counter)
+        counter+=1
+    
+จาก Flowchart ด้านบน หากทำการป้อนค่า 33 เข้าไปจะได้ผลลัพธ์ออกมาเป็น "Fizz", "Buzz", "FizzBuzz และอื่นๆ กี่ครั้ง
+-> 9,4,2,18

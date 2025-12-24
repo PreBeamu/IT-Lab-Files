@@ -1,0 +1,66 @@
+โจทย์: จงเติมนิพจน์ทางคณิตศาสตร์ให้กับตัวแปร result เพื่อให้ได้ผลลัพธ์เดียวกับนิพจน์ด้านล่าง
+หมายเหตุ: ตอนแสดงผลลัพธ์ให้ปัดเศษขึ้นด้วยฟังก์ชั่น math.ceil() โจทย์ได้ใส่ไว้ให้แล้ว
+->  import math
+    x = int(input())
+    result = ((3x/(x+17))-(3/(2x-5)))
+    print(math.ceil(result))
+
+เมื่อเขียนโปรแกรมใน IDLE ดังรูป จงเติมตัวเลขจำนวนเต็มที่ถูกต้องลงในช่องว่างตามลำดับ
+-> 3,5
+
+หมายเหตุ Python ที่ติดตั้งใน iJudge เป็น version 3.12
+และในวิชา PSCP/PSIT กำหนดให้ทำ Pair Programming โดยสลับ Role กันทุกๆกี่นาที
+-> 20
+
+จงหาคำตอบของนิพจน์ 31**2 + 26 * 221 / 13 - 779
+-> 624
+
+ถ้ามี Error ให้ตอบว่า Error
+หากคำตอบเป็น str ให้ตอบโดยใช้ single quote
+-> '1.0' ,-1.0 ,'3.14' ,Error ,5 , 3.0 ,3.14
+
+Number +3
+->  number = int(input())
+    number+=3
+    print(str(number)*3)
+
+200//7+2**3**2%5
+-> 30
+
+เมื่อเขียนโปรแกรมใน IDLE ดังรูป จงเติมตัวเลขจำนวนเต็มที่ถูกต้องลงในช่องว่าง
+-> 1,0
+
+ใน module math มี function อยู่ function หนึ่ง ที่ใช้ในตรวจสอบว่า floating point 2 ค่า ที่รับเข้ามา มีค่าใกล้เคียงกันหรือไม่
+ให้ตอบชื่อ function โดยไม่ต้องมีวงเล็บ
+-> isclose
+
+จงตอบผลลัพธ์ของฟังก์ชั่น bool() ดังต่อไปนี้ ตามลำดับ
+bool(0.000001)
+bool("False")
+bool("0.0")
+bool("")
+bool(0)
+bool(0.0)
+bool('')
+bool(False)
+-> True, True, True, False, False, False, False, True
+
+ภาษา Python version ล่าสุด ที่เป็นแบบ Stable Release ที่ออกมาล่าสุด (ณ วันที่เขียนโจทย์ข้อนี้) ในวันที่ 26 มิถุนายน 2568 เป็น version อะไร
+-> 3.13
+
+Function print() เป็น Built-in function ที่อยู่ใน Module ชื่ออะไร
+-> builtins
+
+Casting ให้เป็นค่าทางตรรกศาสตร์
+-> bool()
+
+Name & Lastname (String Concatenation)
+->  name = str(input())
+    lastname = str(input())
+    print(name,lastname)
+
+เมื่อต้องการหาค่า sin ของขนาดมุม 45 องศา จึงเขียนโปรแกรมดังนี้
+-> Semantic Error (ใช้มุม Radians)
+
+จงตอบผลลัพธ์ของ function ในด้านซ้าย ถ้ามี Error ให้ตอบว่า Error
+-> float
