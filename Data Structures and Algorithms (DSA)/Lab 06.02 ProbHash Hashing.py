@@ -18,7 +18,7 @@ class ProbHash:
         return key % self.size
 
     def rehash(self, hkey):
-        return hkey + 1
+        return (hkey + 1)%self.size
     
     def checkSize(self):
         x = 0
@@ -42,12 +42,20 @@ class ProbHash:
         print(f"Insert {student.std_id} at index {key}")
 
     def search_data(self, std_id):
-        for i in self.hash_table:
-            if i and i.std_id == std_id:
-                print(f"Found {std_id} at index {self.hash_table.index(i)}")
-                i.print_details()
-                return
+        start = std_id % self.size
+        idx = start
+        
+        while self.hash_table[idx] is not None:
+            if self.hash_table[idx].std_id == std_id:
+                print(f"Found {std_id} at index {idx}")
+                return self.hash_table[idx]
+            idx = self.rehash(idx)
+            
+            if idx == start:
+                break
+                
         print(f"{std_id} does not exist.")
+        return None
 
 def main():
     import json
