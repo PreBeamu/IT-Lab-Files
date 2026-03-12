@@ -31,8 +31,10 @@ public class CalculatorSample {
         // Number Buttons 0-9
         b0 = new JButton("0");
         b0.addActionListener(handler);
+        b0.addMouseListener(handler);
         b1 = new JButton("1");
         b1.addActionListener(handler);
+        b1.addMouseListener(handler);
         b2 = new JButton("2");
         b2.addActionListener(handler);
         b3 = new JButton("3");

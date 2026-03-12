@@ -46,6 +46,7 @@ public class ActionHandler implements ActionListener, WindowListener {
             this.sendMsg(gui.getMsgBox().getText());
         } else if (command.equals("Reset")) {
             gui.getChatBox().setText("");
+            chatMsg = "";
         }
     }
 

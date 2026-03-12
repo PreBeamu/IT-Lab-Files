@@ -8,8 +8,10 @@
  * @author prebe
  */
 import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
 
-public class ActionHandler implements ActionListener {
+public class ActionHandler implements ActionListener, MouseListener {
 
     private final CalculatorSample gui;
     private int first_num;
@@ -53,8 +55,31 @@ public class ActionHandler implements ActionListener {
                     default -> {
                     }
                 }
+                this.first_num = Integer.parseInt(result);
+                this.second_num = 0;
+                this.operator = null;
                 gui.getTextField().setText(result);
             }
         }
     }
+    
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        Object source = e.getSource();
+        if (source instanceof JButton button) {
+            button.setBackground(Color.YELLOW);
+        }
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        Object source = e.getSource();
+        if (source instanceof JButton button) {
+            button.setBackground(null);
+        }
+    }
+
+    @Override public void mouseClicked(MouseEvent e) {}
+    @Override public void mousePressed(MouseEvent e) {}
+    @Override public void mouseReleased(MouseEvent e) {}
 }
